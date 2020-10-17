@@ -13,7 +13,7 @@ expressOasGenerator.init(app, {});
 const users = require('./controller/users/users');
 
 // create database connection
-mongoose.connect('mongodb+srv://admin:abcd1234@cluster0.xnfvc.gcp.mongodb.net/evenza?retryWrites=true&w=majority', // mongodb+srv://:${process.env.DB_PASS}@cluster0.xnfvc.gcp.mongodb.net/evenza?retryWrites=true&w=majority    mongodb://localhost:27017/evenza
+mongoose.connect('mongodb+srv://username:password@cluster0.xnfvc.gcp.mongodb.net/evenza?retryWrites=true&w=majority', // mongodb+srv://:${process.env.DB_PASS}@cluster0.xnfvc.gcp.mongodb.net/evenza?retryWrites=true&w=majority    mongodb://localhost:27017/evenza
   { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to monogodb database..');
