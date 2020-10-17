@@ -1,0 +1,46 @@
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <a class="navbar-brand" href="#">GithubREST</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<div class="container" style="padding-top:40px;">
+	<div class="text-center">
+		    <h1>GitHub Viewer</h1>
+	</div>
+    <!-- search form for github users -->
+    <form
+    class="service-form" >
+      <input type="search" [(value)]="username" class="form-control">
+      <br>
+      <div class="text-center">
+        <button  class="btn btn-info" (click) ="search(username)" style="margin-right:20px;"> Find User </button>
+        <button  class="btn btn-secondary" routerLink ="users"> View All Users </button>
+      </div>
+    </form>
+    <!-- details of searched github users -->
+    <hr>
+    <div *ngIf="error ==''">
+      User: {{user.name}}
+      <br>
+      User Location: {{user.location}}
+    </div>
+    <div *ngIf="error !=''">
+      {{error}}
+    </div>
+    <hr>
+    <div>
+      <img src="{{user.avatar_url}}" alt="{{user.name}}">
+    </div>
+    <hr>
+</div>
