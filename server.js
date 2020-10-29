@@ -29,7 +29,7 @@ const onError = error => {
       process.exit(1);
       break;
     case "EADDRINUSE":
-      console.error(bind + " is already in use");
+      console.error(bind + " already in use. cant bind now");
       process.exit(1);
       break;
     default:
@@ -43,7 +43,7 @@ const onListening = () => {
   debug("Listening on " + bind);
 };
 
-const port = normalizePort(process.env.PORT || "5000");
+const port = normalizePort(process.env.PORT || "4000");
 app.set("port", port);
 
 const server = http.createServer(app);
@@ -53,5 +53,5 @@ server.on("listening", onListening);
 
 // listen to the http server
 server.listen(port, () => {
-  console.log("Node JS Server is running on port " + port.toString())
+  console.log("Node JS Server is running on port " + port.toString() + " now...")
 });
